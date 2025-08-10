@@ -1,0 +1,132 @@
+--build image from dockerfile
+docker build -t (imageName) .
+
+
+--list images
+docker images
+
+--run container from image
+docker run --name (containerName) -d -p 4000:3000 (imageName)
+
+--run container from image sync(hot reload)
+docker run --name (containerName) -v (path local dir):(path container dir)-d -p 4000:3000 (imageName)
+
+--run container from image sync(hot reload)(one way)
+docker run --name (containerName) -v (path local dir):(path container dir):ro -d -p 4000:3000 (imageName)
+
+--run container from image sync(hot reload)(environment variables)
+docker run --name (containerName) -v (path local dir):(path container dir):ro --env-file(path file) -d -p 4000:3000 (imageName)
+
+
+--remove container
+docker rm (containerName) -f
+
+--list container
+docker ps
+
+ 
+--pull image from docker hub
+docker pull (imageName)
+
+--open container 
+docker exec -it (containerName) bash
+
+--list logs container
+docker logs (containerName)
+
+--docker version
+docker --version 
+
+--docker help
+docker --help
+
+--create tag image
+docker tag oldimg newnameimg:tage
+
+--push image docker hub
+docker push accountname/imagename:tag
+
+---------------------------------------------------docker compose-----------------------
+
+--docker compose help
+docker-compose --help
+
+--docker compose run
+docker-compose up -d
+
+--docker composer build and run 
+docker-compose up --build
+
+--docker compose stop
+docker-compose down
+
+--enter inside container
+docker exec -it test-project-mongo-1 bash
+
+
+--list all environment variables inside container
+printenv
+
+--more info container
+docker inspect  (containerName)
+
+--list newtoek container
+docker network ls
+
+--list volume
+docker volume ls
+
+--delete volume
+docker volume rm (volumName)
+
+--delete all volume not used
+docker volume prune
+
+
+
+
+-------------------------------------------------docker swarm-----------------------------------
+--active docker swarm
+docker swarm init
+
+--help docker swarm
+docker swarm --help
+
+
+
+
+
+
+--------------------------------------------------docker services-----------------------------------
+
+--help docker swarm
+docker service --help
+
+
+
+
+
+
+--------------------------------------------------docker stack-----------------------------------
+
+--help docker swarm
+docker stack --help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
